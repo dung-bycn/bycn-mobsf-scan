@@ -29,7 +29,7 @@ runs:
     - run: |
         ${{ github.action_path }}/scan.sh
       shell: bash
-      with: 
+      env: 
         MOBSF_URL: ${{ inputs.MOBSF_URL }}
         MOBSF_API_KEY: ${{ inputs.MOBSF_API_KEY }}
         INPUT_FILE_NAME: ${{ inputs.INPUT_FILE_NAME }}
