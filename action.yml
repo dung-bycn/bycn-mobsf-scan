@@ -1,0 +1,13 @@
+name: 'Mobsf Scan'
+description: 'Mobsf Scan for BYCN Project'
+# inputs:
+#   mobsf-server:  # Mobsf Server
+#     description: 'Url for mobsf Server'
+#     required: true
+#     default: 'localhost:8000'
+
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/scan.sh
+      shell: bash
