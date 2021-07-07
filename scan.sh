@@ -1,3 +1,5 @@
+echo ${{ inputs.MOBSF_URL }}
+
 
 if [ -z "$MOBSF_URL" ] || [ ! -f "$MOBSF_URL" ]; then
   echo "MOBSF_URL is required to run MobSF action. (MOBSF_URL = $MOBSF_URL)"
