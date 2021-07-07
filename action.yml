@@ -27,11 +27,11 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: | 
-      export MOBSF_URL=${{ inputs.MOBSF_URL }}
-      export MOBSF_API_KEY=${{ inputs.MOBSF_API_KEY }}
-      export INPUT_FILE_NAME=${{ inputs.INPUT_FILE_NAME }}
-      export OUTPUT_FILE_NAME=${{ inputs.OUTPUT_FILE_NAME }}
-      export SCAN_TYPE=${{ inputs.SCAN_TYPE }}
-      ${{ github.action_path }}/scan.sh
+    - run: ${{ github.action_path }}/scan.sh
       shell: bash
+      env: 
+        MOBSF_URL: ${{ inputs.MOBSF_URL }}
+        MOBSF_API_KEY: ${{ inputs.MOBSF_API_KEY }}
+        INPUT_FILE_NAME: ${{ inputs.INPUT_FILE_NAME }}
+        OUTPUT_FILE_NAME: ${{ inputs.OUTPUT_FILE_NAME }}
+        SCAN_TYPE: ${{ inputs.SCAN_TYPE }}
