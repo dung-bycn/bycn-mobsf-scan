@@ -1,10 +1,28 @@
 name: 'Mobsf Scan'
 description: 'Mobsf Scan for BYCN Project'
-# inputs:
-#   mobsf-server:  # Mobsf Server
-#     description: 'Url for mobsf Server'
-#     required: true
-#     default: 'localhost:8000'
+inputs:
+  MOBSF_URL:  # Mobsf Server
+    description: 'Url for mobsf Server'
+    required: true
+    default: 'localhost:8000'
+  MOBSF_API_KEY:  # Mobsf API Key
+    description: 'Key for mobsf Server'
+    required: true
+    default: 'XXX'
+  INPUT_FILE_NAME:  # Mobsf Server
+    description: 'Input file name'
+    required: true
+    default: app-release.apk
+  OUTPUT_FILE_NAME:  # Mobsf Server
+    description: 'Output file name'
+    required: true
+    default: 'mobsf-report'
+  SCAN_TYPE:  # Mobsf Server
+    description: 'Scan type for mobsf Server'
+    required: true
+    default: 'apk'
+  
+  
 
 runs:
   using: "composite"
