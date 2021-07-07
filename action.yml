@@ -25,9 +25,9 @@ inputs:
   
 
 runs:
+  using: "composite"
   steps:
-    - run: |
-        ${{ github.action_path }}/scan.sh
+    - run: ${{ github.action_path }}/scan.sh
       shell: bash
       env: 
         MOBSF_URL: ${{ inputs.MOBSF_URL }}
