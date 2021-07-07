@@ -27,7 +27,8 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: | 
+    - run: |
+        echo ${{ inputs.MOBSF_URL }}
         export MOBSF_URL=${{ inputs.MOBSF_URL }}
         export MOBSF_API_KEY=${{ inputs.MOBSF_API_KEY }}
         export INPUT_FILE_NAME=${{ inputs.INPUT_FILE_NAME }}
