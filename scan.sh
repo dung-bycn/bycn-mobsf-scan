@@ -54,6 +54,11 @@ echo "[/api/v1/report_json] Generate the json report"
 curl -X POST --url ${MOBSF_URL}/api/v1/report_json --data "hash=${HASH}" -H "Authorization:${MOBSF_API_KEY}" --output ${OUTPUT_FILE_NAME}.json -s -S
 echo "[/api/v1/report_json] JSON report generated"
 
+# Generate the pdf report.
+echo "[/api/v1/download_pdf] Generate the PDF report"
+curl -X POST --url ${MOBSF_URL}/api/v1/download_pdf --data "hash=${HASH}" -H "Authorization:${MOBSF_API_KEY}" --output ${OUTPUT_FILE_NAME}.pdf -s -S
+echo "[/api/v1/download_pdf] PDF report generated"
+
 # Remove analysis from MobSF server.
 # echo "[/api/v1/delete_scan] Remove analysis from MobSF server"
 # curl -X POST --url ${MOBSF_URL}/api/v1/delete_scan --data "hash=${HASH}" -H "Authorization:${MOBSF_API_KEY}"
