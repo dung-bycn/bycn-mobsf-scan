@@ -42,22 +42,22 @@ SCAN_TYPE=$(echo "${RESPONSE}" | jq -r .scan_type)
 FILE_NAME=${FILE_NAME%%*( )}
 HASH=${HASH%%*( )}
 SCAN_TYPE=${SCAN_TYPE%%*( )}
-echo "[/api/v1/upload] Received: FILE_NAME=${FILE_NAME}, HASH=${HASH}, SCAN_TYPE=${SCAN_TYPE}" -s -S
+echo "[/api/v1/upload] Received: FILE_NAME=${FILE_NAME}, HASH=${HASH}, SCAN_TYPE=${SCAN_TYPE}"
 
 # Start the scan.
 echo "[/api/v1/scan] Start the scan"
 curl -X POST --url ${MOBSF_URL}/api/v1/scan --data "scan_type=${SCAN_TYPE}&file_name=${FILE_NAME}&hash=${HASH}" -H "Authorization:${MOBSF_API_KEY}" -s -S
 echo "[/api/v1/scan] Scan finisehd"
 
-# Generate the json report.
-echo "[/api/v1/report_json] Generate the json report"
-curl -X POST --url ${MOBSF_URL}/api/v1/report_json --data "hash=${HASH}" -H "Authorization:${MOBSF_API_KEY}" --output ${OUTPUT_FILE_NAME}.json -s -S
-echo "[/api/v1/report_json] JSON report generated"
+# # Generate the json report.
+# echo "[/api/v1/report_json] Generate the json report"
+# curl -X POST --url ${MOBSF_URL}/api/v1/report_json --data "hash=${HASH}" -H "Authorization:${MOBSF_API_KEY}" --output ${OUTPUT_FILE_NAME}.json -s -S
+# echo "[/api/v1/report_json] JSON report generated"
 
 # Generate the json report.
 echo "[/api/v1/report_json] Generate the json report"
 curl -X POST --url ${MOBSF_URL}/api/v1/report_json --data "hash=${HASH}" -H "Authorization:${MOBSF_API_KEY}" -s -S > ${OUTPUT_FILE_NAME}-1.json
-echo "[/api/v1/report_json] JSON report generated"
+echo "1 [/api/v1/report_json] JSON report generated"
 
 # Generate the pdf report.
 echo "[/api/v1/download_pdf] Generate the PDF report"
