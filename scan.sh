@@ -1,34 +1,34 @@
-echo $MOBSF_URL
+# echo $MOBSF_URL
 
-if [ -z "$MOBSF_URL" ] || [ ! -f "$MOBSF_URL" ]; then
-  echo "MOBSF_URL is required to run MobSF action. (MOBSF_URL = $MOBSF_URL)"
-  exit 126
-fi
+# if [ -z "$MOBSF_URL" ] || [ ! -f "$MOBSF_URL" ]; then
+#   echo "MOBSF_URL is required to run MobSF action. (MOBSF_URL = $MOBSF_URL)"
+#   exit 126
+# fi
 
-if [ -z "$MOBSF_API_KEY" ] || [ ! -f "$MOBSF_API_KEY" ]; then
-  echo "MOBSF_API_KEY is required to run MobSF action. (MOBSF_API_KEY = $MOBSF_API_KEY)"
-  exit 126
-fi
+# if [ -z "$MOBSF_API_KEY" ] || [ ! -f "$MOBSF_API_KEY" ]; then
+#   echo "MOBSF_API_KEY is required to run MobSF action. (MOBSF_API_KEY = $MOBSF_API_KEY)"
+#   exit 126
+# fi
 
-if [ -z "$INPUT_FILE_NAME" ] || [ ! -f "$INPUT_FILE_NAME" ]; then
-  echo "INPUT_FILE_NAME is required to run MobSF action. (INPUT_FILE_NAME = $INPUT_FILE_NAME)"
-  exit 126
-fi
+# if [ -z "$INPUT_FILE_NAME" ] || [ ! -f "$INPUT_FILE_NAME" ]; then
+#   echo "INPUT_FILE_NAME is required to run MobSF action. (INPUT_FILE_NAME = $INPUT_FILE_NAME)"
+#   exit 126
+# fi
 
-if [ -z "$OUTPUT_FILE_NAME" ]; then
-  echo "OUTPUT_FILE_NAME is required to run MobSF action. (OUTPUT_FILE_NAME = $OUTPUT_FILE_NAME)"
-  exit 126
-fi
+# if [ -z "$OUTPUT_FILE_NAME" ]; then
+#   echo "OUTPUT_FILE_NAME is required to run MobSF action. (OUTPUT_FILE_NAME = $OUTPUT_FILE_NAME)"
+#   exit 126
+# fi
 
-if [ -z "$SCAN_TYPE" ]; then
-  echo "OUTPUT_FILE_NAME is required to run MobSF action"
-  exit 126
-else
-  if [ "$SCAN_TYPE" != "apk" ] && [ "$SCAN_TYPE" != "ipa" ] && [ "$SCAN_TYPE" != "appx" ]; then
-    echo "SCAN_TYPE must be apk, ipa or appx. (SCAN_TYPE = $SCAN_TYPE)"
-    exit 126
-  fi
-fi
+# if [ -z "$SCAN_TYPE" ]; then
+#   echo "OUTPUT_FILE_NAME is required to run MobSF action"
+#   exit 126
+# else
+#   if [ "$SCAN_TYPE" != "apk" ] && [ "$SCAN_TYPE" != "ipa" ] && [ "$SCAN_TYPE" != "appx" ]; then
+#     echo "SCAN_TYPE must be apk, ipa or appx. (SCAN_TYPE = $SCAN_TYPE)"
+#     exit 126
+#   fi
+# fi
 
 cd $GITHUB_WORKSPACE
 
