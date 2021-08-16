@@ -5,6 +5,9 @@ inputs:
     description: 'Url for mobsf Server'
     required: true
     default: 'localhost:8000'
+  AUTH: # authentication
+    description: 'base64 to authentication'
+    required: true
   MOBSF_API_KEY:  # Mobsf API Key
     description: 'Key for mobsf Server'
     required: true
@@ -35,3 +38,4 @@ runs:
         INPUT_FILE_NAME: ${{ inputs.INPUT_FILE_NAME }}
         OUTPUT_FILE_NAME: ${{ inputs.OUTPUT_FILE_NAME }}
         SCAN_TYPE: ${{ inputs.SCAN_TYPE }}
+        AUTH: ${{ AUTH }}
