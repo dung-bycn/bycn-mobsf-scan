@@ -38,4 +38,4 @@ runs:
         INPUT_FILE_NAME: ${{ inputs.INPUT_FILE_NAME }}
         OUTPUT_FILE_NAME: ${{ inputs.OUTPUT_FILE_NAME }}
         SCAN_TYPE: ${{ inputs.SCAN_TYPE }}
-        AUTH: ${{ AUTH }}
+        AUTH: ${{ inputs.AUTH }}
